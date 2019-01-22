@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [A K](https://up.htmlacademy.ru/htmlcss/24/user/929465).
-* Наставник: `Неизвестно`.
+* Наставник: [Владислав Токарев](https://htmlacademy.ru/profile/id230106).
 
 ---
 
