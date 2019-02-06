@@ -100,12 +100,30 @@
       </div>
       <p class="developer-link">
         <span>Website by</span>
-        <a href="http://htmlacademy.ru"><img src="img/htmlacademy-logo.svg" alt="Логотип htmlacademy.ru" width="113" height="39"></a>
+        <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/htmlacademy-logo.svg" alt="Логотип htmlacademy.ru" width="113" height="39"></a>
       </p>
     </footer>
     <section class="booking-form">
       <h2 class="visually-hidden">Форма поиска гостиницы в Седоне по параметрам</h2>
-      <!-- Здесь будет форма -->
+      <form action="index.html" method="post" name="booking-form">
+        <label for="id-arrival-date">Дата заезда:</label>
+        <input type="date" value="2017-04-24" name="arrival-date" id="id-arrival-date">
+        <label for="id-departure-date">Дата выезда:</label>
+        <input type="date" value="2017-07-04" name="departure-date" id="id-departure-date">
+        <p>
+          <label for="id-adults">Взрослые:</label>
+          <button id="id-adults-sub">-</button>
+          <input type="number" name="adults" id="id-adults">
+          <button id="id-adults-add">+</button>
+        </p>
+        <p>
+          <label for="id-children">Дети:</label>
+          <button id="id-children-sub">-</button>
+          <input type="number" name="children" id="id-children">
+          <button id="id-children-add">+</button>
+        </p>
+        <button type="submit">Найти</button>
+      </form>
     </section>
   </body>
 </html>

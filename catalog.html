@@ -21,7 +21,65 @@
         <h1 class="visually-hidden">Гостиницы Седоны</h1>
         <section class="booking-filter">
             <h2 class="visually-hidden">Поиск гостиниц Седоны по параметрам</h2>
-            <!-- Здесь будет форма фильтра-->
+            <h3 class="visually-hidden">Параметры для выбора гостиниц Седоны</h3>
+            <form action="catalog.html" method="get" name="booking-filter">
+                <!--  Блок фильра  -->
+                <fieldset>
+                    <legend>Инфраструктура:</legend>
+                    <input type="checkbox" checked name="infrastructure_pool" value="yes" id="id_infrastructure_pool"> <label for="id_infrastructure_pool">Бассейн</label><br>
+                    <input type="checkbox" name="infrastructure" value="parking" id="id_infrastructure_parking"> <label for="id_infrastructure_parking">Парковка</label><br>
+                    <input type="checkbox" name="infrastructure" value="wifi" id="id_infrastructure_wifi"> <label for="id_infrastructure_wifi">Wi-fi</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Тип жилья:</legend>
+                    <input type="checkbox" checked name="hotel-type_hotel" value="yes" id="id_hotel-type_hotel"> <label for="id_hotel-type_hotel">Гостиница</label><br>
+                    <input type="checkbox" checked name="hotel-type_motel" value="yex" id="id_hotel-type_motel"> <label for="id_hotel-type_motel">Мотель</label><br>
+                    <input type="checkbox" checked name="hotel-type_apartment" value="yes" id="id_hotel-type_apartment"> <label for="id_hotel-type_apartment">Апартаменты</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Стоимость в сутки (p):</legend>
+                    <div>
+                        <label for="id_min-price">От</label>
+                        <input type="text" name="min-price" id="id_min-price" value="0">
+                        <label for="id_max-price">До</label>
+                        <input type="text" name="max-price" id="id_max-price" value="3000">
+                    </div>
+                    <div>
+                        <!--  Управление мин и макс ценой ползунками  -->
+                    </div>
+                </fieldset>
+                <input type="text" name="arrange_type" value="price" hidden>
+                <input type="text" name="arrange_direction" value="asc" hidden>
+
+                <button type="submit">Показать</button>
+            </form>
+            <!--  Блок сортировки  -->
+            <section class="arrange">
+                <h3 class="visually-hidden">В каком порядке выводить список гостиниц Седоны</h3>
+                <p>Найдено:3</p>
+                <p>Сортировка:</p>
+                <ul>
+                    <li>По цене<!--<a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=asc">По цене</a>--></li>
+                    <li><a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=type&arrange_direction=asc">По типу</a></li>
+                    <li><a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=rating&arrange_direction=asc">По рейтингу</a></li>
+                </ul>
+                <ul>
+                    <li title="От дешевых к дорогим">
+                        <a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=asc">
+                            <svg class="arrow_up" x="0px" y="0px" width="11px" height="10px" enable-background="new 0 0 11 10" xml:space="preserve">
+                                <polygon points="5.5,0 0,10 11,10"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li title="От дорогих к дешевым">
+                        <a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=des">
+                            <svg class="arrow_dn_selected" x="0px" y="0px" width="11px" height="10px" enable-background="new 0 0 11 10" xml:space="preserve">
+                                <polyline points="5.5,10 0,0 11,0"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </section>
         </section>
         <section class="booking-search-results">
             <h2 class="visually-hidden">Результат поиска гостиниц Седоны</h2>
@@ -78,7 +136,7 @@
         </div>
         <p class="developer-link">
             <span>Website by</span>
-            <a href="http://htmlacademy.ru"><img src="img/htmlacademy-logo.svg" alt="Логотип htmlacademy.ru" width="113" height="39"></a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/htmlacademy-logo.svg" alt="Логотип htmlacademy.ru" width="113" height="39"></a>
         </p>
     </footer>
 </body>
