@@ -1,12 +1,315 @@
-.arrow_up {
-    fill: #cacaca;
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+
+    background-color: #ffffff;
+    /*background-image: url("img/bg.jpg");*/
+    /*background-position: top center;*/
+    /*background-repeat: no-repeat;*/
 }
-.arrow_up_selected {
+
+a {
+    text-decoration: none;
+}
+
+/* ------------------------------*/
+/* Header navigation             */
+/* ------------------------------*/
+.site-nav ul{
+    list-style: none;
+}
+.site-nav a{
+    color: #000000;
+}
+.site-nav a:hover {
+    color: #81b3d2;
+}
+.site-nav a:active {
+    color: rgba(0,0,0,0.3);
+}
+.site-nav-selected {
+    color:#766357;
+}
+
+
+
+.page-content h1{
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+}
+
+/* ------------------------------*/
+/* Reasons to visit              */
+/* ------------------------------*/
+.reasons-to-visit h2{
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    color:#333333;
+}
+.reasons-to-visit ul{
+    list-style: none;
+}
+.reasons-to-visit h3{
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: 700;
+
+}
+.reasons-to-visit-bullet{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+.reasons-to-visit-description{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+.reason-image-right,.reason-image-left {
+    color:#ffffff;
+    background-color:#81b3d2;
+}
+.reason-no-image {
+    color:#333333;
+    background-color:#ffffff;
+}
+
+/* ------------------------------*/
+/* Features                      */
+/* ------------------------------*/
+.features ul{
+    list-style: none;
+}
+.features h3{
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: 700;
+    color:#000000;
+}
+.features p{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color:#333333;
+}
+
+/* ------------------------------*/
+/* Booking CTA                   */
+/* ------------------------------*/
+.booking-CTA-header{
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+}
+.booking-CTA-description {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.booking-CTA-button {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #766357;
+    text-transform: uppercase;
+}
+
+/* ------------------------------*/
+/* Footer                */
+/* ------------------------------*/
+.sedona-news-link a{
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000000;
+}
+.sedona-news-link a:hover {
+    color: #81b3d2;
+}
+.sedona-news-link a:active {
+    color: rgba(0,0,0,0.3);
+}
+.social-buttons{
+
+}
+.developer-link span{
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+/* ------------------------------*/
+/* Booking Form                  */
+/* ------------------------------*/
+.booking-form label{
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+
+}
+.booking-form input{
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    background-color: #f2f2f2;
+    text-transform: uppercase;
+}
+.num-sub, .num-add {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.3);
+    background-color: #f2f2f2;
+}
+.booking-form-find{
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #81b3d2;
+    text-transform: uppercase;
+}
+
+/* ------------------------------*/
+/* Booking Filter Form           */
+/* ------------------------------*/
+.booking-filter fieldset{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+
+}
+
+.booking-filter legend{
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+
+}
+.booking-filter-find {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* ------------------------------*/
+/* Arrange control               */
+/* ------------------------------*/
+.arrange {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+.arrange ul {
+    list-style: none;
+}
+.arrange-found-count {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+}
+
+.arrange-type-active{
+    color: #81b3d2;
+    text-decoration: none;
+}
+.arrange-type a{
+    color: rgba(0,0,0,0.3);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #81b3d2;
+}
+.arrange-type a:hover{
+    color: #81b3d2;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #81b3d2;
+}
+.arrange-type a:active{
+    color: #000000;
+    text-decoration: none;
+}
+
+.arrow_up, .arrow_dn {
+    fill: rgba(0,0,0,0.3);
+}
+.arrow_up:hover, .arrow_dn:hover {
+    fill: #000000;
+}
+.arrow_up:active, .arrow_dn:active {
     fill: #81b3d2;
 }
-.arrow_dn {
-    fill: #cacaca;
-}
-.arrow_dn_selected {
+.arrow_up_selected, .arrow_dn_selected {
     fill: #81b3d2;
+}
+
+/* ------------------------------*/
+/* Hotels List Item              */
+/* ------------------------------*/
+.hotels{
+    list-style: none;
+}
+.hotels h3 a{
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000;
+}
+.hotels h3 a:hover{
+    color: #81b3d2;
+}
+.hotels h3 a:active{
+    color: rgba(0,0,0,0.3);
+}
+.hotel-type, .hotel-from {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #333333;
+}
+.hotel-more-link{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #81b3d2;
+}
+.hotel-more-link:hover{
+    background-color: #669ec0;
+}
+.hotel-more-link:active{
+    color: rgba(255,255,255,0.3);
+    background-color: #5496bd;
+}
+.hotel-book-link{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #766357;
+}
+.hotel-book-link:hover{
+    background-color: #604e43;
+}
+.hotel-book-link:active{
+    color: rgba(255,255,255,0.3);
+    background-color: #503e33;
+}
+.hotel-rating {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #666;
+    background-color: #f2f2f2;
 }

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Каталог гостиниц Седоны</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +15,7 @@
                 <li><a href="#">Информация</a></li>
                 <li><a href="#">Фото и видео</a></li>
                 <li><a href="#">Карта штата</a></li>
-                <li class="site-nav-selected"><a href="#">Гостиницы</a></li>
+                <li class="site-nav-selected">Гостиницы</li>
             </ul>
         </nav>
     </header>
@@ -40,9 +42,9 @@
                     <legend>Стоимость в сутки (p):</legend>
                     <div>
                         <label for="id_min-price">От</label>
-                        <input type="text" name="min-price" id="id_min-price" value="0">
+                        <input type="text" name="min-price" id="id_min-price" placeholder="от 0">
                         <label for="id_max-price">До</label>
-                        <input type="text" name="max-price" id="id_max-price" value="3000">
+                        <input type="text" name="max-price" id="id_max-price" placeholder="до 3000">
                     </div>
                     <div>
                         <!--  Управление мин и макс ценой ползунками  -->
@@ -51,15 +53,15 @@
                 <input type="text" name="arrange_type" value="price" hidden>
                 <input type="text" name="arrange_direction" value="asc" hidden>
 
-                <button type="submit">Показать</button>
+                <button class="booking-filter-find" type="submit">Показать</button>
             </form>
             <!--  Блок сортировки  -->
             <section class="arrange">
                 <h3 class="visually-hidden">В каком порядке выводить список гостиниц Седоны</h3>
-                <p>Найдено:3</p>
+                <p class="arrange-found-count">Найдено:3</p>
                 <p>Сортировка:</p>
-                <ul>
-                    <li>По цене<!--<a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=asc">По цене</a>--></li>
+                <ul class="arrange-type">
+                    <li class="arrange-type-active">По цене<!--<a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=asc">По цене</a>--></li>
                     <li><a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=type&arrange_direction=asc">По типу</a></li>
                     <li><a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=rating&arrange_direction=asc">По рейтингу</a></li>
                 </ul>
@@ -67,16 +69,14 @@
                     <li title="От дешевых к дорогим">
                         <a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=asc">
                             <svg class="arrow_up" x="0px" y="0px" width="11px" height="10px" enable-background="new 0 0 11 10" xml:space="preserve">
-                                <polygon points="5.5,0 0,10 11,10"/>
+                                <polygon id="id_arrow_up" points="5.5,0 0,10 11,10"/>
                             </svg>
                         </a>
                     </li>
                     <li title="От дорогих к дешевым">
-                        <a href="catalog.html?infrastructure_pool=yes&hotel-type_hotel=yes&hotel-type_motel=yes&hotel-type_apartment=yes&min-price=0&max-price=3000&arrange_type=price&arrange_direction=des">
-                            <svg class="arrow_dn_selected" x="0px" y="0px" width="11px" height="10px" enable-background="new 0 0 11 10" xml:space="preserve">
-                                <polyline points="5.5,10 0,0 11,0"/>
-                            </svg>
-                        </a>
+                        <svg class="arrow_dn_selected" x="0px" y="0px" width="11px" height="10px" enable-background="new 0 0 11 10" xml:space="preserve">
+                            <polyline points="5.5,10 0,0 11,0"/>
+                        </svg>
                     </li>
                 </ul>
             </section>
@@ -85,11 +85,17 @@
             <h2 class="visually-hidden">Результат поиска гостиниц Седоны</h2>
             <ul class="hotels">
                 <li>
-                    <h3>Amara Resort & SPA</h3>
+                    <h3><a href="#">Amara Resort & SPA</a></h3>
                     <img src="img/offer1.jpg" alt="Amara Resort & SPA" height="90" width="135">
                     <p class="hotel-type">Гостиница</p>
                     <p class="hotel-from">от 4000 р.</p>
-                    <span class="hotel-stars">*****</span>
+                    <span class="hotel-stars" title="Рейтинг 5 из 5">
+                        <img src="img/star.svg" width="18" height="17" alt="Рейтинг 5 из 5">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                    </span>
                     <p class="hotel-rating">Рейтинг: 8,5</p>
                     <p class="hotel-links">
                         <a class="hotel-more-link" href="#">Подробнее</a>
@@ -97,11 +103,15 @@
                     </p>
                 </li>
                 <li>
-                    <h3>Desert Quail inn</h3>
+                    <h3><a href="#">Desert Quail inn</a></h3>
                     <img src="img/offer2.jpg" alt="Desert Quail inn" height="90" width="135">
                     <p class="hotel-type">Мотель</p>
                     <p class="hotel-from">от 3000 р.</p>
-                    <span class="hotel-stars">***</span>
+                    <span class="hotel-stars" title="Рейтинг 3 из 5">
+                        <img src="img/star.svg" width="18" height="17" alt="Рейтинг 3 из 5">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                    </span>
                     <p class="hotel-rating">Рейтинг: 8,9</p>
                     <p class="hotel-links">
                         <a class="hotel-more-link" href="#">Подробнее</a>
@@ -109,11 +119,14 @@
                     </p>
                 </li>
                 <li>
-                    <h3>Villas at Poco Diablo</h3>
+                    <h3><a href="#">Villas at Poco Diablo</a></h3>
                     <img src="img/offer3.jpg" alt="Villas at Poco Diablo" height="90" width="135">
                     <p class="hotel-type">Апартаменты</p>
                     <p class="hotel-from">от 2000 р.</p>
-                    <span class="hotel-stars">**</span>
+                    <span class="hotel-stars" title="Рейтинг 2 из 5">
+                        <img src="img/star.svg" width="18" height="17" alt="Рейтинг 2 из 5">
+                        <img src="img/star.svg" width="18" height="17" alt="">
+                    </span>
                     <p class="hotel-rating">Рейтинг: 9,2</p>
                     <p class="hotel-links">
                         <a class="hotel-more-link" href="#">Подробнее</a>
