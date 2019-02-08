@@ -10,6 +10,7 @@ body {
     text-transform: uppercase;
 
     background-color: #ffffff;
+
     /*background-image: url("img/bg.jpg");*/
     /*background-position: top center;*/
     /*background-repeat: no-repeat;*/
@@ -37,8 +38,6 @@ a {
 .site-nav-selected {
     color:#766357;
 }
-
-
 
 .page-content h1{
     font-size: 21px;
@@ -139,14 +138,47 @@ a {
 .sedona-news-link a:active {
     color: rgba(0,0,0,0.3);
 }
-.social-buttons{
-
+.social-buttons ul{
+    list-style: none;
 }
+.social-buttons li{
+    /*background-color: #81b3d2;*/
+}
+.social-buttons a{
+    height: 48px;
+    width: 48px;
+    display: block;
+    fill: #fff;
+    background-color: #81b3d2;
+}
+.social-buttons a:hover{
+    background-color: #669ec0;
+    fill: #fff;
+}
+.social-buttons a:active{
+    background-color: #5496bd;
+    fill: rgba(255,255,255,0.3);
+}
+
 .developer-link span{
     font-size: 14px;
     line-height: 26px;
     font-weight: 400;
 }
+.developer-link{
+    fill: #000;
+}
+
+.developer-link a{
+    fill: #000;
+}
+.developer-link a:hover{
+    fill: #81b3d2;
+}
+.developer-link a:active{
+    fill: #bdbbbc;
+}
+
 
 /* ------------------------------*/
 /* Booking Form                  */
