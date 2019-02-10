@@ -8,17 +8,26 @@ body {
     font-weight: 700;
     color: #000000;
     text-transform: uppercase;
-
     background-color: #ffffff;
-
-    /*background-image: url("img/bg.jpg");*/
-    /*background-position: top center;*/
-    /*background-repeat: no-repeat;*/
 }
 
 a {
     text-decoration: none;
 }
+
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 
 /* ------------------------------*/
 /* Header navigation             */
@@ -43,6 +52,26 @@ a {
     font-size: 21px;
     line-height: 26px;
     font-weight: 700;
+}
+/* ------------------------------*/
+/* Welcome screen                */
+/* ------------------------------*/
+.welcome-screen {
+    width: 1200px;
+    height: 508px;
+    margin: 0 auto;
+    background-image: url("../img/welcome-polygon.svg"), url("../img/welcome-background.jpg");
+    background-position: bottom, 100%;
+    background-repeat: no-repeat;
+}
+.welcome-screen-content {
+    text-align: center;
+}
+.welcome-screen-content img{
+    width: 548px;
+    height: 352px;
+    padding: 76px 0 0 0;
+
 }
 
 /* ------------------------------*/
@@ -79,7 +108,7 @@ a {
 }
 .reason-no-image {
     color:#333333;
-    background-color:#ffffff;
+    background-color:#eeeeee;
 }
 
 /* ------------------------------*/
@@ -121,6 +150,18 @@ a {
     color: #ffffff;
     background-color: #766357;
     text-transform: uppercase;
+    height: 86px;
+    width: 568px;
+    border:none;
+}
+
+.booking-CTA-button:hover {
+    background-color: #604e43;
+}
+
+.booking-CTA-button:active {
+    color: rgba(255,255,255,0.3);
+    background-color: #503e33;
 }
 
 /* ------------------------------*/
@@ -195,14 +236,41 @@ a {
     font-weight: 700;
     background-color: #f2f2f2;
     text-transform: uppercase;
+    border: none;
+    height: 38px;
 }
+
+.booking-form input:hover{
+    background-color: #ebebeb;
+}
+
+.booking-form input:focus{
+    background-color: #ffffff;
+    height: 34px;
+    width: 342px;
+    border: 2px solid #e5e5e5;
+    outline: none;
+}
+
+
 .num-sub, .num-add {
     font-size: 21px;
     line-height: 26px;
     font-weight: 700;
     color: rgba(0,0,0,0.3);
     background-color: #f2f2f2;
+    border: none;
+    height: 38px;
+    width: 38px;
 }
+.num-sub:hover, .num-add:hover {
+    color: #000;
+}
+
+.num-sub:active, .num-add:active {
+    color: #81b3d2;
+}
+
 .booking-form-find{
     font-size: 21px;
     line-height: 26px;
@@ -210,11 +278,52 @@ a {
     color: #ffffff;
     background-color: #81b3d2;
     text-transform: uppercase;
+    height: 58px;
+    width: 458px;
+    border: none;
+}
+.booking-form-find:hover{
+    background-color: #669ec0;
+}
+.booking-form-find:active{
+    background-color: #5496bd;
+    color: rgba(255,255,255,0.3);
+}
+
+.booking-form-find{
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #81b3d2;
+    text-transform: uppercase;
+    height: 58px;
+    width: 458px;
+}
+
+.booking-form input[type=date] {
+    width: 346px;
+}
+
+.booking-form input[type=date]:focus {
+    width: 342px;
+}
+
+.booking-form input[type=number] {
+    width: 38px;
+}
+
+.booking-form input[type=number]:focus {
+    width: 34px;
 }
 
 /* ------------------------------*/
 /* Booking Filter Form           */
 /* ------------------------------*/
+.booking-filter-form {
+    background: url("../img/filter-background.jpg") no-repeat;
+    color: #fff;
+}
 .booking-filter fieldset{
     font-size: 14px;
     line-height: 21px;
@@ -233,6 +342,15 @@ a {
     line-height: 21px;
     font-weight: 400;
     text-transform: uppercase;
+    width: 133px;
+    height: 32px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+.booking-filter-find:hover {
+    background-color: #fff;
+    color: #000000;
 }
 
 /* ------------------------------*/
@@ -316,6 +434,8 @@ a {
     font-weight: 700;
     color: #ffffff;
     background-color: #81b3d2;
+    padding: 3px 17px 3px 17px;
+    display: inline-block;
 }
 .hotel-more-link:hover{
     background-color: #669ec0;
@@ -330,6 +450,8 @@ a {
     font-weight: 700;
     color: #ffffff;
     background-color: #766357;
+    padding: 3px 17px 3px 17px;
+    display: inline-block;
 }
 .hotel-book-link:hover{
     background-color: #604e43;
@@ -344,4 +466,6 @@ a {
     font-weight: 400;
     color: #666;
     background-color: #f2f2f2;
+    padding: 3px 16px 3px 16px;
+    display: inline-block;
 }
