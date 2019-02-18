@@ -593,31 +593,70 @@ a {
     color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 31px 72px;
+    padding: 27px 72px;
     height: 217px;
 }
-.filter-col1 {
-    width: 255px;
+.filter-wrapper {
+    display:flex;
 }
-.filter-col2 {
-    width: 255px;
-}
-.filter-col3{
-    width:318px;
-}
-.booking-filter fieldset{
+
+.booking-filter-form {
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
-
 }
-
-.booking-filter legend{
+.booking-filter-form h4 {
     font-size: 16px;
     line-height: 21px;
     font-weight: 700;
-
+    margin:0;
+    padding-bottom: 24px;
 }
+
+.filter-col1, .filter-col2 {
+    width: 255px;
+}
+.filter-col1 div, .filter-col2 div{
+    padding-bottom: 18px;
+}
+
+.filter-col1 input[type=checkbox], .filter-col2 input[type=checkbox]{
+    display: none;
+}
+
+.filter-col1 input + label::before, .filter-col2 input + label::before {
+    content: '';
+    display: inline-block;
+    width: 27px;
+    height: 23px;
+    margin-right:13px;
+    background-image: url("../img/checkbox-off.svg");
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.filter-col1 input:checked + label::before, .filter-col2 input:checked + label::before {
+    content: '';
+    background-image: url("../img/checkbox-on.svg");
+    background-repeat: no-repeat;
+}
+
+.filter-col1 input:disabled + label::before, .filter-col2 input:disabled + label::before {
+    content: '';
+    background-image: url("../img/checkbox-off-gray.svg");
+    background-repeat: no-repeat;
+}
+
+.filter-col1 input:checked:disabled + label::before, .filter-col2 input:checked:disabled + label::before {
+    content: '';
+    background-image: url("../img/checkbox-on-gray.svg");
+    background-repeat: no-repeat;
+}
+
+.filter-col3{
+    width:318px;
+}
+
 .booking-filter-find {
     font-size: 14px;
     line-height: 21px;
@@ -626,6 +665,7 @@ a {
     width: 133px;
     height: 32px;
     border: 2px solid #fff;
+    border-radius: 2px;
     background: transparent;
     color: #fff;
 }

@@ -29,35 +29,31 @@
                     <h3 class="visually-hidden">Параметры для выбора гостиниц Седоны</h3>
                     <form action="catalog.html" method="get" name="booking-filter">
                         <!--  Блок фильра  -->
-                        <div class="filter-col1">
-                            <fieldset class="filter-infrastructure">
-                                <legend>Инфраструктура:</legend>
-                                <input type="checkbox" checked name="infrastructure_pool" value="yes" id="id_infrastructure_pool"> <label for="id_infrastructure_pool">Бассейн</label><br>
-                                <input type="checkbox" name="infrastructure" value="parking" id="id_infrastructure_parking"> <label for="id_infrastructure_parking">Парковка</label><br>
-                                <input type="checkbox" name="infrastructure" value="wifi" id="id_infrastructure_wifi"> <label for="id_infrastructure_wifi">Wi-fi</label><br>
-                            </fieldset>
-                        </div>
-                        <div class="filter-col2">
-                            <fieldset class="filter-hotel_type">
-                                <legend>Тип жилья:</legend>
-                                <input type="checkbox" checked name="hotel-type_hotel" value="yes" id="id_hotel-type_hotel"> <label for="id_hotel-type_hotel">Гостиница</label><br>
-                                <input type="checkbox" checked name="hotel-type_motel" value="yex" id="id_hotel-type_motel"> <label for="id_hotel-type_motel">Мотель</label><br>
-                                <input type="checkbox" checked name="hotel-type_apartment" value="yes" id="id_hotel-type_apartment"> <label for="id_hotel-type_apartment">Апартаменты</label><br>
-                            </fieldset>
+                        <div class="filter-wrapper">
+                            <div class="filter-col1">
+                                <h4>Инфраструктура:</h4>
+                                <div><input type="checkbox" checked name="infrastructure_pool" value="yes" id="id_infrastructure_pool"><label class="checkbox-label" for="id_infrastructure_pool">Бассейн</label></div>
+                                <div><input type="checkbox" name="infrastructure" value="parking" id="id_infrastructure_parking"><label class="checkbox-label" for="id_infrastructure_parking">Парковка</label></div>
+                                <div><input type="checkbox" name="infrastructure" value="wifi" id="id_infrastructure_wifi"><label class="checkbox-label" for="id_infrastructure_wifi">Wi-fi</label></div>
+                            </div>
+                            <div class="filter-col2">
+                                <h4>Тип жилья:</h4>
+                                <div><input type="checkbox" checked name="hotel-type_hotel" value="yes" id="id_hotel-type_hotel"><label class="checkbox-label" for="id_hotel-type_hotel">Гостиница</label></div>
+                                <div><input type="checkbox" checked name="hotel-type_motel" value="yex" id="id_hotel-type_motel"><label class="checkbox-label" for="id_hotel-type_motel">Мотель</label></div>
+                                <div><input type="checkbox" checked name="hotel-type_apartment" value="yes" id="id_hotel-type_apartment"><label class="checkbox-label" for="id_hotel-type_apartment">Апартаменты</label></div>
+                            </div>
                         </div>
                         <div class="filter-col3">
-                            <fieldset class="filter-hotel_cost">
-                                <legend>Стоимость в сутки (p):</legend>
-                                <div>
-                                    <label for="id_min-price">От</label>
-                                    <input type="text" name="min-price" id="id_min-price" placeholder="от 0">
-                                    <label for="id_max-price">До</label>
-                                    <input type="text" name="max-price" id="id_max-price" placeholder="до 3000">
-                                </div>
-                                <div>
-                                    <!--  Управление мин и макс ценой ползунками  -->
-                                </div>
-                            </fieldset>
+                            <h4>Стоимость в сутки (p):</h4>
+                            <div>
+                                <label for="id_min-price">От</label>
+                                <input type="text" name="min-price" id="id_min-price" placeholder="от 0">
+                                <label for="id_max-price">До</label>
+                                <input type="text" name="max-price" id="id_max-price" placeholder="до 3000">
+                            </div>
+                            <div>
+                                <!--  Управление мин и макс ценой ползунками  -->
+                            </div>
                             <input type="text" name="arrange_type" value="price" hidden>
                             <input type="text" name="arrange_direction" value="asc" hidden>
                             <button class="booking-filter-find" type="submit">Показать</button>
