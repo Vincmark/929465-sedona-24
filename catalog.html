@@ -32,15 +32,39 @@
                         <div class="filter-wrapper">
                             <div class="filter-col1">
                                 <h4>Инфраструктура:</h4>
-                                <div><input type="checkbox" checked name="infrastructure_pool" value="yes" id="id_infrastructure_pool"><label class="checkbox-label" for="id_infrastructure_pool">Бассейн</label></div>
-                                <div><input type="checkbox" name="infrastructure" value="parking" id="id_infrastructure_parking"><label class="checkbox-label" for="id_infrastructure_parking">Парковка</label></div>
-                                <div><input type="checkbox" name="infrastructure" value="wifi" id="id_infrastructure_wifi"><label class="checkbox-label" for="id_infrastructure_wifi">Wi-fi</label></div>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="infrastructure_pool" value="yes" class="visually-hidden" checked>
+                                    <span class="checkbox-indicator"></span>
+                                    Бассейн
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="infrastructure_parking" value="yes" class="visually-hidden">
+                                    <span class="checkbox-indicator"></span>
+                                    Парковка
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="infrastructure_wifi" value="yes" class="visually-hidden">
+                                    <span class="checkbox-indicator"></span>
+                                    Wi-fi
+                                </label>
                             </div>
                             <div class="filter-col2">
                                 <h4>Тип жилья:</h4>
-                                <div><input type="checkbox" checked name="hotel-type_hotel" value="yes" id="id_hotel-type_hotel"><label class="checkbox-label" for="id_hotel-type_hotel">Гостиница</label></div>
-                                <div><input type="checkbox" checked name="hotel-type_motel" value="yex" id="id_hotel-type_motel"><label class="checkbox-label" for="id_hotel-type_motel">Мотель</label></div>
-                                <div><input type="checkbox" checked name="hotel-type_apartment" value="yes" id="id_hotel-type_apartment"><label class="checkbox-label" for="id_hotel-type_apartment">Апартаменты</label></div>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="hotel-type_hotel" value="yes" class="visually-hidden" checked>
+                                    <span class="checkbox-indicator"></span>
+                                    Гостиница
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="hotel-type_motel" value="yes" class="visually-hidden" checked>
+                                    <span class="checkbox-indicator"></span>
+                                    Мотель
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="hotel-type_apartment" value="yes" class="visually-hidden" checked>
+                                    <span class="checkbox-indicator"></span>
+                                    Апартаменты
+                                </label>
                             </div>
                         </div>
                         <div class="filter-col3">

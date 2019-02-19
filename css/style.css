@@ -22,15 +22,19 @@ body {
 a {
     text-decoration: none;
 }
-
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
     position: absolute;
+
     width: 1px;
     height: 1px;
     margin: -1px;
     border: 0;
     padding: 0;
+
     white-space: nowrap;
+
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
@@ -659,7 +663,7 @@ a {
 .price-controls .min-price,
 .price-controls .max-price {
     width: 150px;
-    padding-left: 50px;*/
+    padding-left: 50px;
 }
 
 .price-controls input {
@@ -745,29 +749,68 @@ a {
 .filter-col1, .filter-col2 {
     width: 255px;
 }
-.filter-col1 div, .filter-col2 div{
-    padding-bottom: 18px;
+
+
+.checkbox-label {
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 25px;
+    cursor: pointer;
+    display: block;
 }
 
-.filter-col1 input[type=checkbox], .filter-col2 input[type=checkbox]{
-    display: none;
-}
+.checkbox-label input[type="checkbox"] + .checkbox-indicator {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 27px;
+     height: 23px;
+     margin-right:13px;
+     background-image: url("../img/checkbox-off.svg");
+     background-repeat: no-repeat;
+     vertical-align: middle;
+ }
 
-.filter-col1 input + label::before, .filter-col2 input + label::before {
-    content: '';
-    display: inline-block;
+.checkbox-label input[type="checkbox"]:checked + .checkbox-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 27px;
     height: 23px;
     margin-right:13px;
-    background-image: url("../img/checkbox-off.svg");
+    background-image: url("../img/checkbox-on.svg");
     background-repeat: no-repeat;
     vertical-align: middle;
 }
 
-.filter-col1 input:checked + label::before, .filter-col2 input:checked + label::before {
-    content: '';
-    background-image: url("../img/checkbox-on.svg");
+.checkbox-label input[type="checkbox"]:disabled + .checkbox-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 27px;
+    height: 23px;
+    margin-right:13px;
+    background-image: url("../img/checkbox-off-gray.svg");
     background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.checkbox-label input[type="checkbox"]:disabled:checked + .checkbox-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 27px;
+    height: 23px;
+    margin-right:13px;
+    background-image: url("../img/checkbox-on-gray.svg");
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.checkbox-label input[type="checkbox"]:focus + .checkbox-indicator {
+    border-color: #663d15;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
 }
 
 .filter-col1 input:disabled + label::before, .filter-col2 input:disabled + label::before {
