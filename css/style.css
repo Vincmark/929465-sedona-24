@@ -441,8 +441,56 @@ input[type="radio"].visually-hidden {
      align-items: center;
      padding-bottom: 29px;
  }
-.arrival-date-input input{
+.arrival-date-input input,
+.departure-date-input input{
+    position: relative;
     padding-left: 10px;
+}
+.arrival-date-input input::after,
+.departure-date-input input::after {
+    content:'';
+    position: absolute;
+    background-image: url("../img/calendar.svg");
+    right: 9px;
+    top:50%;
+    margin-top:-11px;
+    z-index: 100;
+    width: 21px;
+    height: 22px;
+}
+.arrival-date-input input::-webkit-calendar-picker-indicator,
+.departure-date-input input::-webkit-calendar-picker-indicator {
+    width: 21px;
+    height: 22px;
+    /*margin: 0;*/
+    padding:0;
+    margin-right: 9px;
+    z-index: 101;
+    background: transparent;
+    color: transparent;
+}
+.arrival-date-input input::-webkit-calendar-picker-indicator:hover,
+.departure-date-input input::-webkit-calendar-picker-indicator:hover {
+    position: absolute;
+    right: 0px;
+    top:50%;
+    margin-top:-11px;
+    background-image: url("../img/calendar-hover.svg");
+}
+
+.arrival-date-input input::-webkit-calendar-picker-indicator:active,
+.departure-date-input input::-webkit-calendar-picker-indicator:active {
+    background-image: url("../img/calendar-click.svg");
+}
+
+.arrival-date-input input::-webkit-inner-spin-button,
+.departure-date-input input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.arrival-date-input input::-ms-clear,
+.departure-date-input input::-ms-clear {
+    display: none;
 }
 
 .departure-date-input {
@@ -452,9 +500,9 @@ input[type="radio"].visually-hidden {
     padding-bottom: 30px;
 }
 
-.departure-date-input input{
-    padding-left: 10px;
-}
+/*.departure-date-input input{*/
+    /*padding-left: 10px;*/
+/*}*/
 .adults-input {
     width: 229px;
     display: flex;
@@ -513,6 +561,7 @@ input[type="radio"].visually-hidden {
 
 .booking-form input:hover{
     background-color: #ebebeb;
+    border-color: #ebebeb;
 }
 
 .booking-form input:focus{
@@ -619,7 +668,7 @@ input[type="radio"].visually-hidden {
 
 /*        */
 .filter-range {
-    width: 330px;
+    width: 318px;
 }
 
 .filter-range-title {
@@ -637,6 +686,7 @@ input[type="radio"].visually-hidden {
     border: 2px solid #fff;
     border-radius: 2px;
     position: relative;
+    /*vertical-align: center;*/
 }
 
 .price-controls::after {
@@ -652,18 +702,19 @@ input[type="radio"].visually-hidden {
 
 .price-controls label {
     display: inline-block;
-
     font-size: 14px;
-    line-height: 38px;
-    vertical-align: top;
-
+    line-height: 21px;
     cursor: pointer;
+    width: 150px;
+    padding-top: 5px;
 }
 
-.price-controls .min-price,
+.price-controls .min-price {
+    padding-left: 65px;
+}
+
 .price-controls .max-price {
-    width: 150px;
-    padding-left: 50px;
+    padding-left: 62px;
 }
 
 .price-controls input {
@@ -679,30 +730,27 @@ input[type="radio"].visually-hidden {
 
 .range-controls {
     position: relative;
-
     margin-bottom: 32px;
+    box-sizing: content-box;
+    /*width: 318px;*/
 }
 
 .range-controls .scale {
     height: 2px;
-
     background: rgba(255, 255, 255, 0.3);
 }
 
 .range-controls .bar {
     width: 80%;
     height: 2px;
-
     background: #ffffff;
 }
 
 .range-toggle {
     position: absolute;
     top: -9px;
-
     width: 4px;
     height: 4px;
-
     background: #ababab;
     border: 8px solid #ffffff;
     border-radius: 50%;
@@ -728,7 +776,7 @@ input[type="radio"].visually-hidden {
     padding: 6px 35px;
 
     font-size: 14px;
-    line-height: 20px;
+    line-height: 21px;
     color: #ffffff;
     text-transform: uppercase;
 
