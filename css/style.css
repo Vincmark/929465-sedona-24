@@ -421,7 +421,7 @@ input[type="radio"].visually-hidden {
 /* Booking Form                  */
 /* ------------------------------*/
 .booking-form {
-    /*display: none;*/
+    display: none;
     width: 568px;
     height: 395px;
     background-color: #fff;
@@ -434,6 +434,9 @@ input[type="radio"].visually-hidden {
     padding:55px;
     text-align: left;
 
+}
+.form-show {
+    display: block;
 }
 .arrival-date-input {
      display:flex;
