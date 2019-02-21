@@ -452,10 +452,15 @@ input[type="radio"].visually-hidden {
     z-index: 10;
     padding:55px;
     text-align: left;
+    transform: translateX(0%);
 
+    transition: all 3s ease-in-out;
 }
 .form-show {
     display: block;
+
+    transform: translateX(50%);
+    transition: all 3s ease-in-out;
 }
 .arrival-date-input {
      display:flex;
@@ -652,12 +657,16 @@ input[type="radio"].visually-hidden {
     width: 346px;
 }
 
-.booking-form input[type=text] {
+.booking-form input[type=number] {
     width: 38px;
 }
 
-.booking-form input[type=text]:focus {
+.booking-form input[type=number]:focus {
     width: 38px;
+}
+
+.booking-form input[type=number]::-webkit-inner-spin-button {
+    display: none;
 }
 
 /* ------------------------------*/

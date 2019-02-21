@@ -89,27 +89,7 @@
             </li>
           </ul>
         </section>
-        <!--<section class="features">-->
-          <!--<h2 class="visually-hidden">Особенности пребывания в Седоне</h2>-->
-          <!--<ul>-->
-            <!--<li>-->
-              <!--<h3>Жилье</h3>-->
-              <!--<img class="features-image" src="img/home-icon.svg" alt="Жилье" width="75" height="72">-->
-              <!--<p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>-->
-            <!--</li>-->
-            <!--<li>-->
-              <!--<h3>Еда</h3>-->
-              <!--<img src="img/food-icon.svg" alt="Еда" width="74" height="70">-->
-              <!--<p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>-->
-            <!--</li>-->
-            <!--<li>-->
-              <!--<h3>Сувениры</h3>-->
-              <!--<img class="features-souvenirs-img" src="img/souvenirs-icon.svg" alt="Сувениры" width="64" height="76">-->
-              <!--<p>Не только китайского, но и местного производства!</p>-->
-            <!--</li>-->
-          <!--</ul>-->
 
-        <!--</section>-->
         <section class="booking-CTA">
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
           <p class="booking-CTA-header">Заинтересовались?</p>
@@ -117,7 +97,7 @@
           <button class="booking-CTA-button">Поиск гостиницы в Седоне</button>
             <section class="booking-form form-show">
               <h2 class="visually-hidden">Форма поиска гостиницы в Седоне по параметрам</h2>
-              <form action="index.html" method="post" name="booking-form">
+              <form action="index.html" method="get" name="booking-form">
                 <div class="arrival-date-input">
                   <label for="id-arrival-date">Дата заезда:</label>
                   <input type="date" value="2017-04-24" name="arrival-date" id="id-arrival-date" required>
@@ -133,7 +113,7 @@
                     </div>
                     <div class="adults-input-controls">
                       <button class="num-sub" id="id-adults-sub">–</button>
-                      <input type="text" name="adults" id="id-adults" value="2">
+                      <input type="number" name="adults" id="id-adults" value="2" min="1" max="9" required>
                       <button class="num-add" id="id-adults-add">+</button>
                     </div>
                   </div>
@@ -143,7 +123,7 @@
                     </div>
                     <div class="children-input-controls">
                       <button class="num-sub" id="id-children-sub">–</button>
-                      <input type="text" name="children" id="id-children" value="0">
+                      <input type="number" name="children" id="id-children" value="0" min="0" max="9" required>
                       <button class="num-add" id="id-children-add">+</button>
                     </div>
                   </div>
