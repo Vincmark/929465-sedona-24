@@ -97,7 +97,7 @@
           <button class="booking-CTA-button">Поиск гостиницы в Седоне</button>
             <section class="booking-form form-show">
               <h2 class="visually-hidden">Форма поиска гостиницы в Седоне по параметрам</h2>
-              <form action="index.html" method="get" name="booking-form">
+              <form action="index.html" method="post" name="booking-form">
                 <div class="arrival-date-input">
                   <label for="id-arrival-date">Дата заезда:</label>
                   <input type="date" value="2017-04-24" name="arrival-date" id="id-arrival-date" required>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="adults-input-controls">
                       <button class="num-sub" id="id-adults-sub">–</button>
-                      <input type="number" name="adults" id="id-adults" value="2" min="1" max="9" required>
+                      <input type="number" name="adults" id="id-adults" value="2" min="1" max="9" step="1" required>
                       <button class="num-add" id="id-adults-add">+</button>
                     </div>
                   </div>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="children-input-controls">
                       <button class="num-sub" id="id-children-sub">–</button>
-                      <input type="number" name="children" id="id-children" value="0" min="0" max="9" required>
+                      <input type="number" name="children" id="id-children" value="0" min="0" max="9" step="1" required>
                       <button class="num-add" id="id-children-add">+</button>
                     </div>
                   </div>

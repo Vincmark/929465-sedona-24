@@ -439,8 +439,18 @@ input[type="radio"].visually-hidden {
 /* ------------------------------*/
 /* Booking Form                  */
 /* ------------------------------*/
+@keyframes booking-form-appear {
+    0% { transform: translateY(-2000px); opacity: 0}
+    100% { transform: translateY(0); opacity: 100%}
+}
+
+@keyframes booking-form-disappear {
+    0% { transform: translateY(-2000px); }
+    100% { transform: translateY(0); }
+}
 .booking-form {
     display: none;
+    /*visibility: hidden;*/
     width: 568px;
     height: 395px;
     background-color: #fff;
@@ -452,15 +462,13 @@ input[type="radio"].visually-hidden {
     z-index: 10;
     padding:55px;
     text-align: left;
-    transform: translateX(0%);
-
-    transition: all 3s ease-in-out;
+    animation-name: booking-form-disappear;
+    animation-duration: 0.5s;
 }
 .form-show {
     display: block;
-
-    transform: translateX(50%);
-    transition: all 3s ease-in-out;
+    animation-name: booking-form-appear;
+    animation-duration: 0.5s;
 }
 .arrival-date-input {
      display:flex;
@@ -527,9 +535,6 @@ input[type="radio"].visually-hidden {
     padding-bottom: 30px;
 }
 
-/*.departure-date-input input{*/
-    /*padding-left: 10px;*/
-/*}*/
 .adults-input {
     width: 229px;
     display: flex;
@@ -744,6 +749,12 @@ input[type="radio"].visually-hidden {
     padding-left: 65px;
 }
 
+.min-price input::-webkit-inner-spin-button,
+.max-price input::-webkit-inner-spin-button{
+    display: none;
+}
+
+
 .price-controls .max-price {
     padding-left: 62px;
 }
@@ -772,7 +783,7 @@ input[type="radio"].visually-hidden {
 }
 
 .range-controls .bar {
-    width: 80%;
+    width: 86%;
     height: 2px;
     background: #ffffff;
 }
@@ -798,7 +809,7 @@ input[type="radio"].visually-hidden {
 }
 
 .range-toggle-max {
-    left: 80%;
+    left: 86%;
 }
 
 .btn-transparent {

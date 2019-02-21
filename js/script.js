@@ -1,3 +1,43 @@
+// let priceFrom=document.getElementById('id-min-price');
+// let priceTo=document.getElementById('id-max-price');
+// priceFrom.addEventListener('change', function (evt) {
+//     evt.preventDefault();
+//     let vmin=Number(priceFrom.value);
+//     let vmax=Number(priceTo.value);
+//
+//     if (vmin === 0) vmin = 0;
+//     if (vmin > vmax)  vmin = vmax - 1;
+//     if (vmin > 3499) vmin = 3499;
+//     if (vmin < 0) vmin = 0;
+//     priceFrom.value=vmin;
+//
+//     let togglMin = document.getElementById('id-toggle-min');
+//     togglMin.style.left=getBarPosition (vmin)+'%';
+//
+// });
+//
+//
+// priceTo.addEventListener('change', function (evt) {
+//     evt.preventDefault();
+//     let vmin=Number(priceFrom.value);
+//     let vmax=Number(priceTo.value);
+//
+//     console.log('0. '+vmax);
+//     if (vmax===0) vmax = 3500;
+//     console.log('1. '+vmax);
+//     if (vmax < vmin)  vmax = vmin + 1;
+//     if (vmax > 3500) vmax = 3500;
+//     if (vmax < 0) vmax = 0;
+//     priceTo.value=vmax;
+//
+//     let togglMax = document.getElementById('id-toggle-max');
+//     togglMax.style.left=getBarPosition (vmax)+'%';
+// });
+//
+// function getBarPosition (price) {
+//     return Math.round(100/3500*price);
+// }
+
 
 let button = document.querySelector('.booking-CTA-button');
 let booking_form = document.querySelector('.booking-form');

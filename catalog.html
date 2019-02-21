@@ -72,31 +72,18 @@
                                     <div class="filter-range">
                                         <div class="filter-range-title">Стоимость в сутки (р):</div>
                                         <div class="price-controls">
-                                            <label class="min-price">от <input type="text" name="min-price" value="0"></label>
-                                            <label class="max-price">до <input type="text" name="max-price" value="3000"></label>
+                                            <label class="min-price">от <input type="number" name="min-price" id="id-min-price" value="0" min="0" max="3499" step="1" required></label>
+                                            <label class="max-price">до <input type="number" name="max-price" id="id-max-price" value="3000" min="1" max="3500" step="1" required></label>
                                         </div>
                                         <div class="range-controls">
                                             <div class="scale">
                                                 <div class="bar"></div>
                                             </div>
-                                            <div class="range-toggle range-toggle-min"></div>
-                                            <div class="range-toggle range-toggle-max"></div>
+                                            <div id="id-toggle-min" class="range-toggle range-toggle-min"></div>
+                                            <div id="id-toggle-max" class="range-toggle range-toggle-max"></div>
                                         </div>
                                         <button class="btn-transparent" type="submit">Показать</button>
                                     </div>
-                                    <!--<h4>Стоимость в сутки (p):</h4>-->
-                                    <!--<div>-->
-                                        <!--<label for="id_min-price">От</label>-->
-                                        <!--<input type="text" name="min-price" id="id_min-price" placeholder="от 0">-->
-                                        <!--<label for="id_max-price">До</label>-->
-                                        <!--<input type="text" name="max-price" id="id_max-price" placeholder="до 3000">-->
-                                    <!--</div>-->
-                                    <!--<div>-->
-                                        <!--&lt;!&ndash;  Управление мин и макс ценой ползунками  &ndash;&gt;-->
-                                    <!--</div>-->
-                                    <!--<input type="text" name="arrange_type" value="price" hidden>-->
-                                    <!--<input type="text" name="arrange_direction" value="asc" hidden>-->
-                                    <!--<button class="booking-filter-find" type="submit">Показать</button>-->
                                 </div>
                             </form>
                         </section>
