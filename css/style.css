@@ -159,6 +159,8 @@ input[type="radio"].visually-hidden {
 .reasons-to-visit {
     margin:0;
     padding:0;
+    position: relative;
+    z-index: 2;
 }
 .reason_text {
     height: 256px;
@@ -229,6 +231,8 @@ input[type="radio"].visually-hidden {
 /* ------------------------------*/
 .features {
     padding-top: 60px;
+    position: relative;
+    z-index: 2;
 }
 .features-souvenirs-img {
     margin-top: -5px;
@@ -274,6 +278,11 @@ input[type="radio"].visually-hidden {
     text-align: center;
     position:relative;
 }
+.bg-overlay {
+    background-color: #ffffff;
+    position:relative;
+    z-index: 2;
+}
 .booking-CTA-header{
     font-size: 30px;
     line-height: 36px;
@@ -301,6 +310,8 @@ input[type="radio"].visually-hidden {
     height: 86px;
     width: 568px;
     border:none;
+    position: relative;
+    z-index: 2;
 }
 
 .booking-CTA-button:hover {
@@ -439,18 +450,13 @@ input[type="radio"].visually-hidden {
 /* ------------------------------*/
 /* Booking Form                  */
 /* ------------------------------*/
-@keyframes booking-form-appear {
-    0% { transform: translateY(-2000px); opacity: 0}
-    100% { transform: translateY(0); opacity: 100%}
+@keyframes booking-form-show {
+    0% { transform: translateY(-400px);}
+    100% { transform: translateY(0);}
 }
 
-@keyframes booking-form-disappear {
-    0% { transform: translateY(-2000px); }
-    100% { transform: translateY(0); }
-}
 .booking-form {
     display: none;
-    /*visibility: hidden;*/
     width: 568px;
     height: 395px;
     background-color: #fff;
@@ -459,15 +465,13 @@ input[type="radio"].visually-hidden {
     left:50%;
     margin-left: -284px;
     margin-bottom: -395px;
-    z-index: 10;
+    z-index: 1;
     padding:55px;
     text-align: left;
-    animation-name: booking-form-disappear;
-    animation-duration: 0.5s;
 }
 .form-show {
     display: block;
-    animation-name: booking-form-appear;
+    animation-name: booking-form-show;
     animation-duration: 0.5s;
 }
 .arrival-date-input {
@@ -497,7 +501,6 @@ input[type="radio"].visually-hidden {
 .departure-date-input input::-webkit-calendar-picker-indicator {
     width: 21px;
     height: 22px;
-    /*margin: 0;*/
     padding:0;
     margin-right: 9px;
     z-index: 101;
@@ -507,7 +510,7 @@ input[type="radio"].visually-hidden {
 .arrival-date-input input::-webkit-calendar-picker-indicator:hover,
 .departure-date-input input::-webkit-calendar-picker-indicator:hover {
     position: absolute;
-    right: 0px;
+    right: 0;
     top:50%;
     margin-top:-11px;
     background-image: url("../img/calendar-hover.svg");

@@ -91,46 +91,48 @@
         </section>
 
         <section class="booking-CTA">
-          <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
-          <p class="booking-CTA-header">Заинтересовались?</p>
-          <p class="booking-CTA-description">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
-          <button class="booking-CTA-button">Поиск гостиницы в Седоне</button>
-            <section class="booking-form form-show">
-              <h2 class="visually-hidden">Форма поиска гостиницы в Седоне по параметрам</h2>
-              <form action="index.html" method="post" name="booking-form">
-                <div class="arrival-date-input">
-                  <label for="id-arrival-date">Дата заезда:</label>
-                  <input type="date" value="2017-04-24" name="arrival-date" id="id-arrival-date" required>
-                </div>
-                <div class="departure-date-input">
-                  <label for="id-departure-date">Дата выезда:</label>
-                  <input type="date" value="2017-07-04" name="departure-date" id="id-departure-date" required>
-                </div>
-                <div class="count-input">
-                  <div class="adults-input">
-                    <div class="adults-input-description">
-                      <label for="id-adults">Взрослые:</label>
-                    </div>
-                    <div class="adults-input-controls">
-                      <button class="num-sub" id="id-adults-sub">–</button>
-                      <input type="number" name="adults" id="id-adults" value="2" min="1" max="9" step="1" required>
-                      <button class="num-add" id="id-adults-add">+</button>
-                    </div>
+          <div class="bg-overlay">
+            <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+            <p class="booking-CTA-header">Заинтересовались?</p>
+            <p class="booking-CTA-description">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
+            <button class="booking-CTA-button">Поиск гостиницы в Седоне</button>
+          </div>
+          <section class="booking-form">
+            <h2 class="visually-hidden">Форма поиска гостиницы в Седоне по параметрам</h2>
+            <form action="index.html" method="post" name="booking-form">
+              <div class="arrival-date-input">
+                <label for="id-arrival-date">Дата заезда:</label>
+                <input type="date" value="2017-04-24" name="arrival-date" id="id-arrival-date" required>
+              </div>
+              <div class="departure-date-input">
+                <label for="id-departure-date">Дата выезда:</label>
+                <input type="date" value="2017-07-04" name="departure-date" id="id-departure-date" required>
+              </div>
+              <div class="count-input">
+                <div class="adults-input">
+                  <div class="adults-input-description">
+                    <label for="id-adults">Взрослые:</label>
                   </div>
-                  <div class="children-input">
-                    <div class="children-input-description">
-                      <label for="id-children">Дети:</label>
-                    </div>
-                    <div class="children-input-controls">
-                      <button class="num-sub" id="id-children-sub">–</button>
-                      <input type="number" name="children" id="id-children" value="0" min="0" max="9" step="1" required>
-                      <button class="num-add" id="id-children-add">+</button>
-                    </div>
+                  <div class="adults-input-controls">
+                    <button class="num-sub" id="id-adults-sub">–</button>
+                    <input type="number" name="adults" id="id-adults" value="2" min="1" max="9" step="1" required>
+                    <button class="num-add" id="id-adults-add">+</button>
                   </div>
                 </div>
-                <button class="booking-form-find" type="submit">Найти</button>
-              </form>
-            </section>
+                <div class="children-input">
+                  <div class="children-input-description">
+                    <label for="id-children">Дети:</label>
+                  </div>
+                  <div class="children-input-controls">
+                    <button class="num-sub" id="id-children-sub">–</button>
+                    <input type="number" name="children" id="id-children" value="0" min="0" max="9" step="1" required>
+                    <button class="num-add" id="id-children-add">+</button>
+                  </div>
+                </div>
+              </div>
+              <button class="booking-form-find" type="submit">Найти</button>
+            </form>
+          </section>
         </section>
         <section class="state-map">
           <h2 class="visually-hidden">Карта окресностей Седоны</h2>
