@@ -58,6 +58,7 @@ function setBarLine () {
 let button = document.querySelector('.booking-CTA-button');
 let booking_form = document.querySelector('.booking-form');
 if (button!==null) {
+    // booking_form.classList.remove('form-show');
     button.addEventListener('click', function (evt) {
         evt.preventDefault();
         booking_form.classList.toggle('form-show');
