@@ -1,8 +1,7 @@
 let priceFrom=document.getElementById('id-min-price');
 let priceTo=document.getElementById('id-max-price');
+let wMax = 298;
 
-console.log(priceFrom);
-console.log(priceFrom!==null);
 if (priceFrom!==null) {
     priceFrom.addEventListener('change', function (evt) {
         evt.preventDefault();
@@ -16,8 +15,9 @@ if (priceFrom!==null) {
         priceFrom.value = vmin;
 
         let togglMin = document.getElementById('id-toggle-min');
-        togglMin.style.left = getBarPosition(vmin) + '%';
-
+        // console.log(vmin);
+        togglMin.style.left = getBarPosition(vmin) + 'px';
+        setBarLine ();
     });
 }
 
@@ -27,23 +27,33 @@ if (priceTo!==null) {
         let vmin = Number(priceFrom.value);
         let vmax = Number(priceTo.value);
 
-        console.log('0. ' + vmax);
-        if (vmax === 0) vmax = 3500;
-        console.log('1. ' + vmax);
+        if (vmax === 0) vmax = vmin + 1;
         if (vmax < vmin) vmax = vmin + 1;
         if (vmax > 3500) vmax = 3500;
         if (vmax < 0) vmax = 0;
         priceTo.value = vmax;
 
         let togglMax = document.getElementById('id-toggle-max');
-        togglMax.style.left = getBarPosition(vmax) + '%';
+        togglMax.style.left = getBarPosition(vmax) + 'px';
+        setBarLine ();
     });
 }
 
 function getBarPosition (price) {
-    return Math.round(100/3500*price);
+    // console.log(wMax/3500*price);
+    return Math.round(wMax/3500*price);
 }
 
+function setBarLine () {
+    let startVal = Number(priceFrom.value);
+    let endVal = Number(priceTo.value);
+    let x1=Math.round(wMax/3500*startVal);
+    let x2=Math.round(wMax/3500*endVal);
+    let w=x2-x1;
+    let bar = document.querySelector('.bar');
+    bar.style.left = (x1+10)+'px';
+    bar.style.width = w+'px';
+}
 
 let button = document.querySelector('.booking-CTA-button');
 let booking_form = document.querySelector('.booking-form');
