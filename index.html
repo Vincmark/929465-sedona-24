@@ -5,7 +5,7 @@
     <title>HTML Academy: Седона</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 <div class="website-wrapper">
@@ -103,11 +103,13 @@
                 <form action="index.html" method="post" name="booking-form">
                     <div class="arrival-date-input">
                         <label for="id-arrival-date">Дата заезда:</label>
-                        <input type="date" value="2017-04-24" name="arrival-date" id="id-arrival-date" required>
+                        <input type="text" value="24 апреля 2017" name="arrival-date" id="id-arrival-date" required>
+                        <button></button>
                     </div>
                     <div class="departure-date-input">
                         <label for="id-departure-date">Дата выезда:</label>
-                        <input type="date" value="2017-07-04" name="departure-date" id="id-departure-date" required>
+                        <input type="text" value="4 июля 2017" name="departure-date" id="id-departure-date" required>
+                        <button></button>
                     </div>
                     <div class="count-input">
                         <div class="adults-input">
@@ -203,6 +205,6 @@
         </footer>
     </div>
 </div>
-<script src="js/script.js"></script>
+<script src="js/script.min.js"></script>
 </body>
 </html>

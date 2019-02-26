@@ -571,75 +571,45 @@ input[type="radio"].visually-hidden {
     animation-duration: .5s;
 }
 
-.arrival-date-input {
+.arrival-date-input,
+.departure-date-input {
     display: flex;
 
     padding-bottom: 29px;
 
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .arrival-date-input input,
 .departure-date-input input {
-    position: relative;
-
     padding-left: 10px;
 }
 
-.arrival-date-input input::after,
-.departure-date-input input::after {
+.arrival-date-input button,
+.departure-date-input button {
     position: absolute;
-    z-index: 100;
-    top: 50%;
-    right: 9px;
-
-    width: 21px;
-    height: 22px;
-    margin-top: -11px;
-
-    content: "";
-
     background-image: url("../img/calendar.svg");
-}
-
-.arrival-date-input input::-webkit-calendar-picker-indicator,
-.departure-date-input input::-webkit-calendar-picker-indicator {
-    z-index: 101;
-
+    background-color: transparent;
     width: 21px;
     height: 22px;
-    margin-right: 9px;
+    border: none;
+    margin: 0;
     padding: 0;
+    top: 9px;
+    right: 9px;
+    cursor: pointer;
 
-    color: transparent;
-    background: transparent;
 }
-
-.arrival-date-input input::-webkit-calendar-picker-indicator:hover,
-.departure-date-input input::-webkit-calendar-picker-indicator:hover {
-    position: absolute;
-    top: 50%;
-    right: 0;
-
-    margin-top: -11px;
-
+.arrival-date-input button:hover,
+.departure-date-input button:hover {
     background-image: url("../img/calendar-hover.svg");
 }
 
-.arrival-date-input input::-webkit-calendar-picker-indicator:active,
-.departure-date-input input::-webkit-calendar-picker-indicator:active {
+.arrival-date-input button:active,
+.departure-date-input button:active {
     background-image: url("../img/calendar-click.svg");
-}
-
-.arrival-date-input input::-webkit-inner-spin-button,
-.departure-date-input input::-webkit-inner-spin-button {
-    display: none;
-}
-
-.arrival-date-input input::-ms-clear,
-.departure-date-input input::-ms-clear {
-    display: none;
 }
 
 .departure-date-input {
@@ -666,10 +636,7 @@ input[type="radio"].visually-hidden {
     padding-right: 3px;
 }
 
-.adults-input-controls input {
-    text-align: center;
-}
-
+.adults-input-controls input,
 .children-input-controls input {
     text-align: center;
 }
@@ -745,6 +712,7 @@ input[type="radio"].visually-hidden {
     color: rgba(0,0,0,.3);
     border: none;
     background-color: #f2f2f2;
+    cursor: pointer;
 }
 
 .num-sub:hover,
@@ -795,16 +763,17 @@ input[type="radio"].visually-hidden {
     background-color: #81b3d2;
 }
 
-.booking-form input[type=date] {
+.booking-form input[type=text] {
     width: 346px;
 }
 
-.booking-form input[type=date]:focus {
+.booking-form input[type=text]:focus {
     width: 346px;
 }
 
 .booking-form input[type=number] {
     width: 38px;
+    -moz-appearance: textfield;
 }
 
 .booking-form input[type=number]:focus {
@@ -1293,18 +1262,31 @@ input[type="radio"].visually-hidden {
     margin: 0;
 }
 
+
+.hotel-stars img {
+    margin-left: 6px;
+}
+
+
+.hotel-links{
+    padding-bottom: 10px;
+}
+
 .hotels-col2 {
     display: flex;
     flex-direction: column;
 
     width: 241px;
+    padding-bottom: 9px;
 
     justify-content: space-between;
     align-items: flex-end;
 }
 
 .hotel-stars {
-    padding-top: 3px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 4px;
 }
 
 .hotel-stars span {
@@ -1312,8 +1294,9 @@ input[type="radio"].visually-hidden {
 }
 
 .hotels li {
-    height: 151px;
-    padding: 25px 72px 30px 72px;
+    min-height: 151px;
+    /*padding: 25px 72px 30px 72px;*/
+    padding: 26px 72px 21px 72px;
 
     border-bottom: 1px solid #e5e5e5;
 }
@@ -1418,6 +1401,7 @@ input[type="radio"].visually-hidden {
     display: inline-block;
 
     padding: 3px 12px 3px 12px;
+    margin-bottom: 20px;
 
     color: #666666;
     background-color: #f2f2f2;
