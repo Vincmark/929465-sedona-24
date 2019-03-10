@@ -15,7 +15,6 @@ if (priceFrom!==null) {
         priceFrom.value = vmin;
 
         var togglMin = document.getElementById('id-toggle-min');
-        // console.log(vmin);
         togglMin.style.left = getBarPosition(vmin) + 'px';
         setBarLine ();
     });
@@ -56,14 +55,153 @@ function setBarLine () {
 }
 
 var button = document.querySelector('.booking-CTA-button');
+var booking_find_btn = document.querySelector('.booking-form-find');
 var booking_form = document.querySelector('.booking-form');
+var ArrivalDate = document.getElementById('id-arrival-date');
+var DepartureDate = document.getElementById('id-departure-date');
+var ArrivalDateText = document.querySelector('.arrival-date-text');
+var DepartureDateText = document.querySelector('.departure-date-text');
+var AdultsNum = document.getElementById('id-adults');
+var ChildrenNum = document.getElementById('id-children');
+var AdultsNumText = document.querySelector('.adults-num-text');
+var ChildrenNumText = document.querySelector('.children-num-text');
+
 if (button!==null) {
-    // booking_form.classList.remove('form-show');
     button.addEventListener('click', function (evt) {
         evt.preventDefault();
-        booking_form.classList.toggle('form-show');
+        var isShowAnimation=booking_form.classList.contains('form-show');
+        var isShowForm = booking_form.classList.contains('form-show-no-animation');
+        if (!isShowAnimation && !isShowForm)
+            booking_form.classList.add('form-show');
+        else if (isShowAnimation || isShowForm) {
+            booking_form.classList.remove('form-show');
+            booking_form.classList.remove('form-show-no-animation');
+        }
+        clearError();
+    });
+    booking_find_btn.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        clearError();
+        booking_form.offsetWidth = booking_form.offsetWidth;
+
+        var ADateError=false;
+        var DDateError=false;
+        var AdultsError=false;
+        var ChildrenError=false;
+        var DateError=false;
+
+        var ADateVal = ArrivalDate.value;
+        var DDateVal = DepartureDate.value;
+        var ANum = AdultsNum.value;
+        var CNum = ChildrenNum.value;
+        var ArrivalDateValid=isDate(ADateVal);
+        var DepartureDateValid=isDate(DDateVal);
+        var TodayDate = new Date();
+        TodayDate.setHours(0);
+        TodayDate.setMinutes(0);
+        TodayDate.setSeconds(0);
+
+        if (ArrivalDateValid === false){
+            ADateError = true;
+        }
+        if (DepartureDateValid === false){
+            DDateError = true;
+        }
+        if (ADateError || DDateError){
+            DateError = true;
+        }
+        if (ArrivalDateValid - TodayDate < 0){
+            ADateError = true;
+            DateError = true;
+        }
+        if ((DepartureDateValid - ArrivalDateValid < 0) || (DepartureDateValid - TodayDate < 0)){
+            DDateError = true;
+            DateError = true;
+        }
+        if ((ANum === '') || (Number(ANum) < 1)){
+            AdultsError = true;
+            DateError = true;
+        }
+        if (CNum === ''){
+            ChildrenError = true;
+            DateError = true;
+        }
+        if (!DateError) {
+            document.getElementById("id-booking-form").submit();
+        } else{
+            setError(ADateError, DDateError, AdultsError, ChildrenError, DateError);
+        }
     });
 }
+
+var isDate = function(date) {
+    date.toLowerCase();
+    date.trim();
+    var monthList = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+    var dateElems = date.split(' ');
+
+    if (dateElems.length !== 3)
+        return false;
+
+    var monthIndex=monthList.indexOf(dateElems[1]);
+    if (monthIndex === -1)
+        return false;
+
+    var day = dateElems[0];
+    var month = monthIndex;
+    var year = dateElems[2];
+
+    // Check the ranges of month and year
+    if(year < 2000 || year > 2100)
+        return false;
+
+    // Adjust for leap years
+    if(year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0))
+        monthLength[1] = 29;
+
+    if ((day < 0) || (day > monthLength[month]))
+        return false;
+
+    var d = new Date();
+    d.setDate(day);
+    d.setMonth(month);
+    d.setFullYear(year);
+    d.setHours(0);
+    d.setMinutes(0);
+    d.setSeconds(0);
+
+    return(d);
+};
+
+var setError = function(aDate, dDate, Adults, Children, Date) {
+
+    if (aDate){
+        ArrivalDateText.classList.add('input-error');
+    }
+    if (dDate){
+        DepartureDateText.classList.add('input-error');
+    }
+    if (Adults){
+        AdultsNumText.classList.add('input-error');
+    }
+    if (Children){
+        ChildrenNumText.classList.add('input-error');
+    }
+    if (aDate || dDate || Date) {
+        booking_form.classList.add('form-error');
+        booking_form.classList.add('form-show-no-animation');
+        booking_form.classList.remove('form-show');
+    }
+};
+
+var clearError = function() {
+    booking_form.classList.remove('form-error');
+    ArrivalDateText.classList.remove('input-error');
+    DepartureDateText.classList.remove('input-error');
+    AdultsNumText.classList.remove('input-error');
+    ChildrenNumText.classList.remove('input-error');
+};
 
 var adultsAddBtn=document.getElementById('id-adults-add');
 if (adultsAddBtn!==null) {

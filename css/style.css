@@ -545,6 +545,18 @@ input[type="radio"].visually-hidden {
     }
 }
 
+@keyframes booking-form-error {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
 .booking-form {
     position: absolute;
     z-index: 1;
@@ -568,7 +580,19 @@ input[type="radio"].visually-hidden {
     display: block;
 
     animation-name: booking-form-show;
-    animation-duration: .5s;
+    animation-duration: 0.6s;
+}
+
+.form-show-no-animation {
+    display: block;
+
+    /*animation-name: booking-form-show;*/
+    /*animation-duration: 0.6s;*/
+}
+
+.form-error {
+    animation-name: booking-form-error;
+    animation-duration: 0.6s;
 }
 
 .arrival-date-input,
@@ -672,7 +696,7 @@ input[type="radio"].visually-hidden {
     line-height: 26px;
 }
 
-.booking-form input {
+.booking-form-input {
     font-size: 14px;
     font-weight: 700;
     line-height: 26px;
@@ -685,12 +709,12 @@ input[type="radio"].visually-hidden {
     background-color: #f2f2f2;
 }
 
-.booking-form input:hover {
+.booking-form-input:hover {
     border-color: #ebebeb;
     background-color: #ebebeb;
 }
 
-.booking-form input:focus {
+.booking-form-input:focus {
     width: 346px;
     height: 38px;
 
@@ -784,6 +808,11 @@ input[type="radio"].visually-hidden {
     display: none;
 }
 
+.input-error {
+    color: tomato;
+}
+
+
 /* ------------------------------*/
 /* Booking Filter Form           */
 /* ------------------------------*/
@@ -799,8 +828,7 @@ input[type="radio"].visually-hidden {
     justify-content: space-between;
 }
 
-.filter-wrapper
-{
+.filter-wrapper {
     display: flex;
 }
 
@@ -1184,7 +1212,7 @@ input[type="radio"].visually-hidden {
     color: rgba(0,0,0,.3);
 
     text-decoration-style: dotted;
-    text-decoration-color: #81b3d2;;
+    text-decoration-color: #81b3d2;
 }
 
 .arrange-type a:hover {

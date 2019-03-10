@@ -100,21 +100,21 @@
             </div>
             <section class="booking-form">
                 <h2 class="visually-hidden">Форма поиска гостиницы в Седоне по параметрам</h2>
-                <form action="index.html" method="post" name="booking-form">
+                <form action="index.html" method="post" name="booking-form" id="id-booking-form">
                     <div class="arrival-date-input">
-                        <label for="id-arrival-date">Дата заезда:</label>
-                        <input type="text" value="24 апреля 2017" name="arrival-date" id="id-arrival-date" required>
+                        <label class="arrival-date-text" for="id-arrival-date">Дата заезда:</label>
+                        <input class="arrival-date-field booking-form-input" type="text" value="24 апреля 2017" name="arrival-date" id="id-arrival-date" required>
                         <button></button>
                     </div>
                     <div class="departure-date-input">
-                        <label for="id-departure-date">Дата выезда:</label>
-                        <input type="text" value="4 июля 2017" name="departure-date" id="id-departure-date" required>
+                        <label class="departure-date-text" for="id-departure-date">Дата выезда:</label>
+                        <input class="departure-date-field booking-form-input" type="text" value="4 июля 2017" name="departure-date" id="id-departure-date" required>
                         <button></button>
                     </div>
                     <div class="count-input">
                         <div class="adults-input">
                             <div class="adults-input-description">
-                                <label for="id-adults">Взрослые:</label>
+                                <label class="adults-num-text" for="id-adults">Взрослые:</label>
                             </div>
                             <div class="adults-input-controls">
                                 <button class="num-sub" id="id-adults-sub" aria-label="Увеличить количество взрослых">–</button>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="children-input">
                             <div class="children-input-description">
-                                <label for="id-children">Дети:</label>
+                                <label class="children-num-text" for="id-children">Дети:</label>
                             </div>
                             <div class="children-input-controls">
                                 <button class="num-sub" id="id-children-sub" aria-label="Увеличить количество детей">–</button>
